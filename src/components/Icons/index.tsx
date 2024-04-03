@@ -91,6 +91,8 @@ export {
     FilterAltOffOutlined as FilterAltOffOutlinedIcon,
     KeyboardArrowDown as KeyboardArrowDownIcon,
     PersonSearchOutlined as CMSIcon,
+    CalendarMonth as CalendarIcon,
+    KeyboardArrowUp as KeyboardArrowUpIcon,
     FormatColorText as FormatTextColorIcon,
     HighlightOutlined as HighlightOutlinedIcon
 } from '@mui/icons-material';

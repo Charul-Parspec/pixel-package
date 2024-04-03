@@ -15,6 +15,7 @@ export interface SelectProps extends Omit<MUISelectProps, 'classes'> {
     optionLabelKeyname?: string;
     optionValueKeyname?: string;
     borderColor?: BorderColorType;
+    customOption?: (props: SelectMenuOption) => JSX.Element;
 }
 export { SelectChangeEvent } from '@mui/material';
 export declare const Select: import("react").ForwardRefExoticComponent<Omit<SelectProps, "ref"> & import("react").RefAttributes<HTMLDivElement>>;

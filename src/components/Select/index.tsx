@@ -22,6 +22,7 @@ export interface SelectProps extends Omit<MUISelectProps, 'classes'> {
     optionLabelKeyname?: string;
     optionValueKeyname?: string;
     borderColor?: BorderColorType;
+    customOption?: (props: SelectMenuOption) => JSX.Element;
 }
 
 export { SelectChangeEvent } from '@mui/material';
@@ -57,18 +58,20 @@ const StyledFormControl = styled(FormControl, {
     };
 });
 
-export const Select = forwardRef<HTMLDivElement, SelectProps>(({ id, labelId, options, size, label, optionLabelKeyname = 'label', optionValueKeyname = 'value', borderColor, ...rest }, ref) => (
-    <StyledFormControl fullWidth ref={ref} size={size} borderColor={borderColor}>
-        {label && <InputLabel id={labelId}>{label}</InputLabel>}
-        <MUISelect {...rest} labelId={labelId} label={label} id={id}>
-            {options.map((item, index) => (
-                <MenuItem key={index} value={item[optionValueKeyname] as string | number} sx={item?.color ? { color: item.color } : undefined} disabled={item.disabled}>
-                    {item[optionLabelKeyname]}
-                </MenuItem>
-            ))}
-        </MUISelect>
-    </StyledFormControl>
-));
+export const Select = forwardRef<HTMLDivElement, SelectProps>(
+    ({ id, labelId, options, size, label, optionLabelKeyname = 'label', optionValueKeyname = 'value', borderColor, customOption, ...rest }, ref) => (
+        <StyledFormControl fullWidth ref={ref} size={size} borderColor={borderColor}>
+            {label && <InputLabel id={labelId}>{label}</InputLabel>}
+            <MUISelect {...rest} labelId={labelId} label={label} id={id}>
+                {options.map((item, index) => (
+                    <MenuItem key={index} value={item[optionValueKeyname] as string | number} sx={item?.color ? { color: item.color } : undefined} disabled={item.disabled}>
+                        {customOption ? customOption(item) : item[optionLabelKeyname]}
+                    </MenuItem>
+                ))}
+            </MUISelect>
+        </StyledFormControl>
+    )
+);
 
 Select.defaultProps = {
     labelId: 'demo-simple-select-label',

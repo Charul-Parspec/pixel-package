@@ -76,6 +76,8 @@ import {
     FormatListBulletedIcon,
     FormatUnderlinedIcon,
     KeyboardArrowDownIcon,
+    CalendarIcon,
+    KeyboardArrowUpIcon,
     FormatTextColorIcon,
     HighlightOutlinedIcon
 } from './index';
@@ -195,6 +197,8 @@ MUIImportedIcons.args = {
             name: 'FormatUnderlinedIcon'
         },
         { icon: KeyboardArrowDownIcon, name: 'KeyboardArrowDownIcon' },
+        { icon: CalendarIcon, name: 'CalendarIcon' },
+        { icon: KeyboardArrowUpIcon, name: 'KeyboardArrowUpIcon' },
         { icon: FormatTextColorIcon, name: 'FormatTextColorIcon' },
         { icon: HighlightOutlinedIcon, name: 'HighlightOutlinedIcon' }
     ],
