@@ -1,5 +1,5 @@
 {
-    "name": "@charul/pixel-package",
+    "name": "@Charul-Parspec/pixel-package",
     "version": "1.0.0",
     "description": "Parspec UI component library",
     "main": "dist/cjs/index.js",
@@ -89,6 +89,6 @@
         ]
     },
     "publishConfig": {
-        "@charul:registry": "https://npm.pkg.github.com"
+        "@Charul-Parspec:registry": "https://npm.pkg.github.com"
     }
 }
