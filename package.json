@@ -1,5 +1,5 @@
 {
-    "name": "@parspec/pixel",
+    "name": "@charul/pixel",
     "version": "1.0.0",
     "description": "Parspec UI component library",
     "main": "dist/cjs/index.js",
@@ -87,5 +87,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "publishConfig": {
+        "@charul:registry": "https://npm.pkg.github.com"
     }
 }
